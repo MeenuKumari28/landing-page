@@ -1,0 +1,179 @@
+-- ds.page:
+
+-- contact-us: Contact Us
+cta-text: Contact Me
+cta-link: /
+image: $assets.files.assets.contact.png
+
+
+Lorem ipsum dolor sit amet. Qui consequatur mollitia est tenetur vero ea magni
+minus ea porro velit et fugit deleniti sit dolorem exercitationem. Nam galisum
+nihil ut porro sequi ut assumenda incidunt est nemo galisum
+
+-- end: ds.page
+
+
+
+
+
+-- component contact-us:
+caption title:
+body body:
+string cta-text:
+string cta-link:
+optional ftd.image-src image:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.desktop:
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+padding-horizontal.px: 64
+;;background.linear-gradient: $lg-2
+
+-- ftd.row:
+max-width.fixed.percent: 50
+width.fixed.px: 800
+height.fixed.px: 834
+background.solid: $inherited.colors.background.step-1
+z-index: 2
+
+-- ftd.image:
+src: $contact-us.image
+width.fixed.px: 500
+align-self: center
+margin-left.px: 88
+z-index: 5
+fit: cover
+
+-- ftd.column:
+anchor: parent
+height.fixed.px: 318
+width.fixed.px: 466
+border-right-width.px: 20
+border-bottom-width.px: 20
+align-self: end
+right.px: 46
+bottom.px: 40
+border-color: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+width.fixed.px: 500
+spacing.fixed.px: 32
+align-self: center
+
+-- ftd.column:
+width.fixed.px: 124
+height.fixed.px: 12
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text: $contact-us.title
+role: $inherited.types.heading-large
+color: $inherited.colors.cta-primary.text
+
+-- ftd.text:
+role: $inherited.types.copy-large
+color: $inherited.colors.cta-secondary.text 
+
+$contact-us.body
+
+-- ftd.text: $contact-us.cta-text
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.cta-primary.text
+padding.px: 12
+border-radius.px: 12
+link: $contact-us.cta-link
+css: [$assets.files.assets.animate.css]
+classes: swing
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 32
+margin-bottom.px: 80
+
+-- ftd.column:
+width.fixed.px: 124
+height.fixed.px: 12
+background.solid: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 16
+
+-- ftd.text: $contact-us.title
+role: $inherited.types.heading-large
+color: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- ftd.text:
+role: $inherited.types.copy-large
+color: $inherited.colors.text 
+
+$contact-us.body
+
+-- ftd.text: $contact-us.cta-text
+role: $inherited.types.copy-large
+color: $inherited.colors.text-strong
+background.solid: $inherited.colors.cta-primary.text
+padding.px: 12
+border-radius.px: 12
+
+-- ftd.row:
+width.fixed.px: 300
+height.fixed.px: 420
+background.solid: $inherited.colors.accent.secondary
+z-index: 2
+align-self: end
+
+-- ftd.image:
+src: $contact-us.image
+width.fixed.px: 322
+height.fixed.px: 322
+margin-top.px: 24
+margin-left.px: -76
+z-index: 5
+fit: cover
+
+-- ftd.column:
+anchor: parent
+height.fixed.px: 291
+width.fixed.px: 278
+border-right-width.px: 20
+border-bottom-width.px: 20
+align-self: end
+right.px: 18
+bottom.px: 40
+border-color: $inherited.colors.accent.primary
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: contact-us

@@ -3,17 +3,19 @@
 -- fastn.package: meenukumari28.github.io/landing-page
 favicon: /-/meenukumari28.github.io/landing-page/favicon.ico
 
--- fastn.dependency: fastn-community.github.io/doc-site as doc-site
--- fastn.dependency: fastn-community.github.io/footer
--- fastn.dependency: fastn-community.github.io/roboto-typography
--- fastn.dependency: fastn-community.github.io/dark-flame-cs
+-- fastn.dependency: meenukumari28.github.io/onest-typography as typo
+-- fastn.dependency: meenukumari28.github.io/magenta-cs
 
 -- fastn.auto-import: meenukumari28.github.io/landing-page/FASTN/ds
 -- fastn.auto-import: meenukumari28.github.io/landing-page/assets
--- fastn.auto-import: doc-site
+-- fastn.auto-import: meenukumari28.github.io/landing-page/common
+-- fastn.auto-import: typo
+
 
 -- fastn.sitemap:
 
-# Home: index.html
+# HOME: index.html
 
-- Right Sidebar Sample: /sidebar/
+# ABOUT: /about/
+
+# CONTACT: /contact/
