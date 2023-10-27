@@ -1,0 +1,184 @@
+-- import: fastn/processors as pr
+
+-- string number: 1234567890
+
+-- string site-name: Fastn
+
+-- boolean show-footer: true
+
+-- ftd.image-src site-logo: $assets.files.assets.m.svg
+
+-- integer logo-width: 74
+
+-- integer logo-height: 74
+
+-- string site-url: index.html
+
+-- boolean login-button: false
+
+-- integer max-width: 1320
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.sitemap
+
+
+-- record step-list:
+optional caption title:
+optional body body:
+ftd.image-src image:
+optional string number:
+boolean right: false
+boolean margin-top: false
+
+-- step-list list step-lists:
+
+-- step-list: Lorem
+image: $assets.files.assets.card1.jpg
+number: 1
+margin-top: true
+
+Design your drop of 1-5 NFTs and send us your artwork. We get that you're
+creative, so take note: Sweet supports image, audio and video media assets.
+Make your NFT drop interesting, engaging and fun.
+
+-- step-list: Lorem
+image: $assets.files.assets.card2.jpg
+number: 2
+right: true
+
+Design your drop of 1-5 NFTs and send us your artwork. We get that you're
+creative, so take note: Sweet supports image, audio and video media assets.
+Make your NFT drop interesting, engaging and fun.
+
+-- step-list: Lorem
+image: $assets.files.assets.card1.jpg
+number: 3
+
+Design your drop of 1-5 NFTs and send us your artwork. We get that you're
+creative, so take note: Sweet supports image, audio and video media assets.
+Make your NFT drop interesting, engaging and fun.
+
+-- end: step-lists
+
+
+-- step-list list step-lists-two:
+
+-- step-list: Lorem
+image: $assets.files.assets.card1.jpg
+number: 3
+
+Design your drop of 1-5 NFTs and send us your artwork. We get that you're
+creative, so take note: Sweet supports image, audio and video media assets.
+Make your NFT drop interesting, engaging and fun.
+
+-- end: step-lists-two
+
+
+
+
+-- step-list list step-lists-three:
+
+-- step-list: Drop Your Design
+image: $assets.files.assets.card1.jpg
+
+Design your drop of 1-5 NFTs and send us your arthreerk. We get that you're
+creative, so take note: Sweet supports image, audio and video media assets.
+Make your NFT drop interesting, engaging and fun.
+
+-- end: step-lists-three
+
+
+
+
+
+
+
+-- record clients:
+ftd.image-src logo:
+string link:
+
+-- clients list list-of-clients:
+
+-- clients: 
+logo: $assets.files.assets.logo-1.svg
+link: index.html
+
+-- clients: 
+logo: $assets.files.assets.logo-2.svg
+link: index.html
+
+-- clients: 
+logo: $assets.files.assets.logo-3.svg
+link: index.html
+
+-- clients: 
+logo: $assets.files.assets.logo-4.svg
+link: index.html
+
+-- end: list-of-clients
+
+
+
+
+
+
+
+-- record count:
+caption title:
+string number:
+string id:
+
+-- count list counts:
+
+-- count: Lorem One
+number: 160
+id: count1
+
+-- count: Lorem Two
+number: 20
+id: count2
+
+-- count: Lorem Three
+number: 365
+id: count3
+
+-- count: Lorem Four
+number: 80
+id: count4
+
+-- end: counts
+
+
+
+
+
+
+
+
+
+-- record social-media:
+ftd.image-src src:
+string link: /
+
+-- social-media list share:
+
+-- social-media list social-links:
+
+-- social-media:
+link: /
+src: $assets.files.assets.fb.png
+
+-- social-media: 
+link: /
+src: $assets.files.assets.figma.png
+
+-- social-media:
+link: /
+src: $assets.files.assets.google.png
+
+-- social-media: 
+link: /
+src: $assets.files.assets.chat.png
+
+-- end: social-links
+
