@@ -1,6 +1,7 @@
 -- import: fastn
 -- import: meenukumari28.github.io/onest-typography as typo
 -- import: meenukumari28.github.io/magenta-cs as cs
+-- import: meenukumari28.github.io/landing-page/assets
 -- import: meenukumari28.github.io/landing-page as lp
 export: hero-section, featured-section, count-section, title-body, footer, client-card
 
