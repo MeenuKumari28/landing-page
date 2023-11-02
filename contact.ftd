@@ -33,7 +33,6 @@ width: fill-container
 spacing: space-between
 align-content: center
 padding-horizontal.px: 64
-;;background.linear-gradient: $lg-2
 
 -- ftd.row:
 max-width.fixed.percent: 50
@@ -109,6 +108,7 @@ classes: swing
 width: fill-container
 spacing.fixed.px: 32
 margin-bottom.px: 80
+padding.px: 20
 
 -- ftd.column:
 width.fixed.px: 124
@@ -122,15 +122,15 @@ spacing.fixed.px: 16
 
 -- ftd.text: $contact-us.title
 role: $inherited.types.heading-large
-color: $inherited.colors.accent.primary
-
--- end: ftd.column
+color: $inherited.colors.cta-primary.text
 
 -- ftd.text:
 role: $inherited.types.copy-large
-color: $inherited.colors.text 
+color: $inherited.colors.cta-secondary.text 
 
 $contact-us.body
+
+-- end: ftd.column
 
 -- ftd.text: $contact-us.cta-text
 role: $inherited.types.copy-large
@@ -140,18 +140,15 @@ padding.px: 12
 border-radius.px: 12
 
 -- ftd.row:
-width.fixed.px: 300
+width.fixed.px: 400
 height.fixed.px: 420
 background.solid: $inherited.colors.accent.secondary
 z-index: 2
-align-self: end
 
 -- ftd.image:
 src: $contact-us.image
-width.fixed.px: 322
-height.fixed.px: 322
-margin-top.px: 24
-margin-left.px: -76
+width: fill-container
+margin-top.px: 78
 z-index: 5
 fit: cover
 
