@@ -17,7 +17,7 @@ boolean breadcrumb: true
 
 -- ftd.column:
 width: fill-container
-padding-horizontal.px: 64
+padding-horizontal.px if { ftd.device != "mobile" }: 64
 sticky: true
 z-index: 9999
 background.solid: $inherited.colors.background.step-2
@@ -25,7 +25,7 @@ background.solid: $inherited.colors.background.step-2
 -- ftd.column:
 if: { header.sidebar-open }
 width: fill-container
-background.solid: $inherited.colors.background.overlay
+background.solid: $inherited.colors.background.step-1
 height.fixed.calc: 100vh
 z-index: 10
 
@@ -391,20 +391,18 @@ boolean breadcrumb: false
 
 -- ftd.column: 
 width: fill-container
-background.solid: $inherited.colors.background.step-1
+background.solid: $inherited.colors.background.step-2
 $on-click-outside$: $ftd.set-bool($a = $header-mobile.show-section, v = false)
 
 -- ftd.row:
 padding-horizontal.px: 16
 padding-vertical.px: 16
 width: fill-container
-align-content: center
 
 -- ftd.column:
 
 -- ftd.row:
 width: fill-container
-spacing.fixed.px: 16
 
 -- ftd.image:
 src: $header-mobile.menu-icon
@@ -432,35 +430,6 @@ align-self: center
 -- fallback-title:
 if: { header-mobile.site-logo == NULL }
 site-name: $header-mobile.site-name
-
--- end: ftd.row
-
--- end: ftd.row
-
--- ftd.row:
-width: fill-container
-background.solid: $inherited.colors.background.step-1
-
--- ftd.row:
-align-self: end
-height: fill-container
-
--- ftd.row:
-align-self: center
-width: fill-container
-
--- ftd.image: 
-if: { !header-mobile.show-section }
-src: $assets.files.assets.down-arrow-dark.svg
-height: hug-content
-width.fixed.px: 12
-
--- ftd.image: 
-if: { header-mobile.show-section }
-src: $assets.files.assets.up-arrow-dark.svg
-width.fixed.px: 12
-
--- end: ftd.row
 
 -- end: ftd.row
 
@@ -625,7 +594,7 @@ top.px: 0
 overflow-y: auto
 padding-top.px: 20
 padding-horizontal.px: 24
-background.solid: $inherited.colors.background.step-1
+background.solid: $inherited.colors.background.step-2
 z-index: 14
 
 -- ftd.column:

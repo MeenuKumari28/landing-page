@@ -172,74 +172,26 @@ optional string site-name:
 ftd.image-src site-logo:
 string site-url:
 pr.toc-item list sections:
-boolean $open-right-sidebar-info: false
 children wrapper:
-boolean github-icon: false
-optional string github-url:
+optional integer logo-width: 
+optional integer logo-height:
 
 -- ftd.column:
+align-self: center
 width: fill-container
-background.solid: $inherited.colors.background.base
 
 -- h.header:
 sections: $doc-page-mobile.sections
+logo-height: $doc-page-mobile.logo-height
+logo-width: $doc-page-mobile.logo-width
 site-logo: $doc-page-mobile.site-logo
 site-url: $doc-page-mobile.site-url
 site-name: $doc-page-mobile.site-name
-logo-height: 38
 menu-icon: $assets.files.assets.hamburger.svg
 
 -- ftd.column:
 width: fill-container
-padding-horizontal.px: 24
-padding-vertical.px: 24
-spacing.fixed.px: 24
-min-height.fixed.calc: 100vh
-
--- ftd.column:
 children: $doc-page-mobile.wrapper
-spacing.fixed.px: 32
-width.fixed.percent: 100
-
--- end: ftd.column
-
--- ftd.column:
-if: { doc-page-mobile.open-right-sidebar-info }
-anchor: parent
-top.px: 0
-bottom.px: 0
-left.px: 0
-right.px: 0
-background.solid: $inherited.colors.background.overlay
-z-index: 1
-width: fill-container
-height.fixed.calc: 100% - 0px
-$on-click$: $ftd.set-bool($a = $doc-page-mobile.open-right-sidebar-info, v = false)
-
--- ftd.image:
-src: $assets.files.assets.cross-dark.svg
-height.fixed.px: 16
-width: auto
-margin-top.px: 30
-margin-left.px: 16
-$on-click$: $ftd.toggle($a = $doc-page-mobile.open-right-sidebar-info)
-
--- end: ftd.column
-
--- ftd.column:
-if: { doc-page-mobile.open-right-sidebar-info }
-width.fixed.calc: 100% - 48px
-height.fixed.calc: 100% - 0px
-overflow-y: auto
-align-content: top-right
-anchor: parent
-right.px: 0
-top.px: 0
-background.solid: $inherited.colors.background.step-1
-z-index: 1
-padding-horizontal.px: 24
-
--- end: ftd.column
 
 -- end: ftd.column
 
@@ -347,6 +299,9 @@ border-color: $inherited.colors.accent.primary
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 32
+padding-horizontal.px: 24
+padding-vertical.px: 24
+background.linear-gradient: $lg-2
 margin-bottom.px: 80
 
 -- ftd.column:
@@ -361,10 +316,12 @@ spacing.fixed.px: 16
 
 -- ftd.text: $hero-section.title
 role: $inherited.types.heading-large
-color: $inherited.colors.accent.primary
+color: $inherited.colors.text-strong
+css: [$assets.files.assets.animate.css]
+classes: animate-charcter
 
 -- ftd.text: $hero-section.sub-title
-role: $inherited.types.heading-medium
+role: $inherited.types.heading-small
 color: $inherited.colors.text-strong
 
 -- end: ftd.column
@@ -380,14 +337,13 @@ width.fixed.px: 300
 height.fixed.px: 420
 background.solid: $inherited.colors.accent.secondary
 z-index: 2
-align-self: end
+align-self: center
 
 -- ftd.image:
 src: $hero-section.image
-width.fixed.px: 322
-height.fixed.px: 322
-margin-top.px: 24
-margin-left.px: -76
+width.fixed.px: 200
+margin-top.px: 56
+margin-left.px: 36
 z-index: 5
 fit: cover
 
@@ -431,6 +387,7 @@ common.step-list list step-lists:
 width: fill-container
 align-content: center
 padding-horizontal.px if { ftd.device == "mobile" }: 20
+padding-vertical.px if { ftd.device == "mobile" }: 16
 background.solid: $inherited.colors.accent.secondary
 
 -- ftd.row:
@@ -537,29 +494,32 @@ spacing.fixed.px: 24
 
 -- ftd.image:
 src: $section-details.image
-width: fill-container
+width.fixed.px: 324
 height.fixed.px: 324
+align-self: center
 
 -- ftd.row:
 spacing.fixed.px: 24
 align-content: center
+css: [$assets.files.assets.animate.css]
+classes: animate-right
+classes if { section-details.right }: animate-left
 
 -- ftd.text: $section-details.number
-if: { $section-details.number != NULL }
+if: { section-details.number != NULL }
 role: $inherited.types.heading-hero
-color: $inherited.colors.text
-opacity: 0.3
+color: $inherited.colors.text-strong
 
 -- ftd.text: $section-details.title
 if: {section-details.title != NULL}
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-medium
+color: $inherited.colors.cta-primary.text
 style: bold
 
 -- end: ftd.row
 
 -- ftd.text:
-role: $inherited.types.copy-regular
+role: $inherited.types.copy-large
 color: $inherited.colors.text
 
 $section-details.body
@@ -588,12 +548,14 @@ common.count list counts:
 -- ftd.column:
 width: fill-container
 padding.px: 64
+padding.px if { ftd.device == "mobile" }: 20
 spacing.fixed.px: 28
 align-content: center
 
 -- ftd.text: $count-section.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.cta-secondary.text
+text-align if { ftd.device == "mobile" }: center
 
 -- ftd.row:
 width: fill-container
@@ -628,8 +590,9 @@ string id:
 
 -- ftd.column:
 width.fixed.px: 285
+width.fixed.px if { ftd.device == "mobile" }: 150
 spacing.fixed.px: 8
-padding.px: 30
+padding.px if { ftd.device != "mobile" }: 30
 align-content: center
 
 -- ftd.text: $count-details.number
@@ -677,6 +640,7 @@ top.px: 0
 
 -- ftd.column:
 width.fixed.px: 780
+width if { ftd.device == "mobile" }: fill-container
 spacing.fixed.px: 24
 align-content: center
 z-index: 5
@@ -713,6 +677,11 @@ string copyright:
 
 -- ftd.column:
 width: fill-container
+
+-- ftd.desktop:
+
+-- ftd.column:
+width: fill-container
 align-content: center
 padding-vertical.px: 24
 border-top-width.px: 1
@@ -742,6 +711,41 @@ role: $inherited.types.label-small
 color: $inherited.colors.cta-secondary.text
 
 -- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding-vertical.px: 24
+border-top-width.px: 1
+border-color: $inherited.colors.border
+padding-horizontal.px: 26
+spacing.fixed.px: 16
+
+-- ftd.row:
+spacing.fixed.px: 18
+
+-- ftd.image:
+$loop$: $footer.social-links as $obj
+width.fixed.px: 26
+height.fixed.px: 26
+src: $obj.src
+link: $obj.link
+
+-- end: ftd.row
+
+-- ftd.text: $footer.copyright
+role: $inherited.types.label-small
+color: $inherited.colors.cta-secondary.text
+
+-- end: ftd.column
+
+-- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -865,16 +869,16 @@ align-content: center
 
 -- ftd.column:
 spacing.fixed.px: 17
+role: $inherited.types.copy-regular
+color: $inherited.colors.cta-secondary.text
 
 -- ftd.text: $client-card-mobile.title
 role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
+color: $inherited.colors.cta-primary.text
 text-align: center
 
 -- ftd.text:
 if: { client-card-mobile.body != NULL }
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
 
 $client-card-mobile.body
 
@@ -883,6 +887,7 @@ $client-card-mobile.body
 -- ftd.column:
 spacing.fixed.px: 40
 width: fill-container
+align-content: center
 
 -- client-lists:
 $loop$: $client-card-mobile.client-list as $obj
@@ -909,7 +914,7 @@ ftd.image-src logo:
 string link:
 
 -- ftd.row:
-width if { ftd.device == "mobile"}: fill-container
+width.fixed.px if { ftd.device == "mobile"}: 350
 align-content: center
 border-width.px: 1
 border-radius.px: 12
